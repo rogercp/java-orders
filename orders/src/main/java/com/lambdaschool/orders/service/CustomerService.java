@@ -16,5 +16,4 @@ public interface CustomerService
 
     void delete(long custcode);
 
-
 }
