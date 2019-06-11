@@ -1,6 +1,5 @@
 package com.lambdaschool.orders.model;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -8,23 +7,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="agents")
+@Table(name = "agents")
 public class Agents
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long agentCode;
-    private String agentName;
-    private String workingArea;
+    private long agentcode;
+    private String agentname;
+    private String workingarea;
     private double commission;
     private String phone;
     private String country;
 
     @OneToMany(mappedBy = "agent",
-                cascade = CascadeType.ALL,
-                orphanRemoval = true)
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     @JsonIgnoreProperties({"agents"})
-    private List<Customer> customers = new ArrayList<>();
+    private List<Customers> customers = new ArrayList<>();
 
     @OneToMany(mappedBy = "agent",
             cascade = CascadeType.ALL,
@@ -36,43 +35,43 @@ public class Agents
     {
     }
 
-    public Agents(String agentName, String workingArea, double commission, String phone, String country)
+    public Agents(String agentname, String workingarea, double commission, String phone, String country)
     {
-        this.agentName = agentName;
-        this.workingArea = workingArea;
+        this.agentname = agentname;
+        this.workingarea = workingarea;
         this.commission = commission;
         this.phone = phone;
         this.country = country;
     }
 
-    public long getAgentCode()
+    public long getAgentcode()
     {
-        return agentCode;
+        return agentcode;
     }
 
-    public void setAgentCode(long agentCode)
+    public void setAgentcode(long agentcode)
     {
-        this.agentCode = agentCode;
+        this.agentcode = agentcode;
     }
 
-    public String getAgentName()
+    public String getAgentname()
     {
-        return agentName;
+        return agentname;
     }
 
-    public void setAgentName(String agentName)
+    public void setAgentname(String agentname)
     {
-        this.agentName = agentName;
+        this.agentname = agentname;
     }
 
-    public String getWorkingArea()
+    public String getWorkingarea()
     {
-        return workingArea;
+        return workingarea;
     }
 
-    public void setWorkingArea(String workingArea)
+    public void setWorkingarea(String workingarea)
     {
-        this.workingArea = workingArea;
+        this.workingarea = workingarea;
     }
 
     public double getCommission()
@@ -105,12 +104,12 @@ public class Agents
         this.country = country;
     }
 
-    public List<Customer> getCustomers()
+    public List<Customers> getCustomers()
     {
         return customers;
     }
 
-    public void setCustomers(List<Customer> customers)
+    public void setCustomers(List<Customers> customers)
     {
         this.customers = customers;
     }
