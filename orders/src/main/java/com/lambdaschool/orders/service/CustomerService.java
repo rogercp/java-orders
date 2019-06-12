@@ -8,7 +8,7 @@ public interface CustomerService
 {
     ArrayList<Customers> findAll();
 
-    Customers findCustomerByName(String name);
+    Customers findCustomerByName(String custname);
 
     Customers save(Customers customer);
 
